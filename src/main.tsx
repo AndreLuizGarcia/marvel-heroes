@@ -1,20 +1,27 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import Home from './pages/Home.tsx'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { Providers } from './providers/index.tsx'
-import Character from './pages/Character.tsx'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
+import Layout from './components/Layout';
+import Character from './pages/Character';
+import Home from './pages/Home';
+import { Providers } from './providers';
 
 const router = createBrowserRouter([
   {
-    path: '/',
-    element: <Home />
-  },
-  {
-    path: '/character/:id',
-    element: <Character />
+    element: <Layout />,
+    children: [
+      {
+        path: '/',
+        element: <Home />
+      },
+      {
+        path: '/character/:id',
+        element: <Character />
+      }
+    ]
   }
-])
+]);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -22,4 +29,4 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <RouterProvider router={router} />
     </Providers>
   </React.StrictMode>
-)
+);
