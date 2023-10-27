@@ -1,4 +1,5 @@
-import { createGlobalStyle } from 'styled-components'
+import 'react-responsive-pagination/themes/classic.css';
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
   * {
@@ -11,13 +12,20 @@ const GlobalStyles = createGlobalStyle`
     font-size: 62.5%; // 1rem = 10px (16px * 62.5% = 10px)
   }
 
-  html, body {
+  html, body, #root {
     height: 100%;
   }
 
   body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
-`
 
-export default GlobalStyles
+  #root {
+    display: flex;
+    flex-direction: column;
+
+    --pagination-font-size: 1.5rem
+  }
+`;
+
+export default GlobalStyles;
