@@ -10,8 +10,7 @@
     An awesome place to see the list of all Marvel Characters.
     <br/>
     <br/>
-    <a href="https://github.com//Marvel Heroes">View Demo</a>
-    .
+    <a href="https://marvel-heroes-tawny-six.vercel.app/">View Demo</a>
   </p>
 </p>
 
