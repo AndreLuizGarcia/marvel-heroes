@@ -20,7 +20,9 @@ const getAllCharacters = async (
   ).then((res) => res.json());
 };
 
-const getCharacterById = async (characterId: number) => {
+const getCharacterById = async (
+  characterId: number
+): Promise<MarvelAPIResult> => {
   return fetch(`${baseURL}/${MarvelApiRoutes.CHARACTERS}/${characterId}?`).then(
     (res) => res.json()
   );
